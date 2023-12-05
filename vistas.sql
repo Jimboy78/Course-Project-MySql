@@ -9,6 +9,10 @@ FROM Prestamo
 JOIN Libro ON Prestamo.ID_Libro = Libro.ID_Libro
 JOIN Usuario ON Prestamo.ID_Usuario = Usuario.ID_Usuario;
 
+-- Ejemplo de cómo usar LibrosPrestadosPorUsuario
+SELECT * FROM LibrosPrestadosPorUsuario;
+
+
 -- Descripción de la Vista ResumenPrestamosPendientes
 -- Esta vista proporciona un resumen de los préstamos pendientes.
 
@@ -17,3 +21,6 @@ CREATE VIEW ResumenPrestamosPendientes AS
 SELECT COUNT(*) AS Cantidad_Prestamos_Pendientes
 FROM Prestamo
 WHERE Fecha_Devolucion IS NULL;
+
+-- Ejemplo de cómo usar ResumenPrestamosPendientes
+SELECT * FROM ResumenPrestamosPendientes;

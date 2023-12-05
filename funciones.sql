@@ -14,6 +14,10 @@ BEGIN
     RETURN Multa;
 END;
 
+-- Ejemplo de cómo usar CalcularMulta
+SELECT CalcularMulta('2023-10-15') AS MultaPorRetraso;
+
+
 -- Descripción de la Función ObtenerLibrosDisponibles
 -- Esta función devuelve la lista de libros disponibles para préstamo.
 
@@ -27,6 +31,10 @@ BEGIN
         WHERE Libro.ID_Libro NOT IN (SELECT ID_Libro FROM Prestamo WHERE Fecha_Devolucion IS NULL)
     );
 END;
+
+-- Ejemplo de cómo usar UsuarioTienePrestamosPendientes
+SELECT UsuarioTienePrestamosPendientes(201) AS TienePrestamosPendientes;
+
 
 -- Descripción de la Función UsuarioTienePrestamosPendientes
 -- Esta función verifica si un usuario tiene libros pendientes de devolución.
@@ -42,3 +50,6 @@ BEGIN
     
     RETURN PrestamosPendientes > 0;
 END;
+
+-- Ejemplo de cómo usar UsuarioTienePrestamosPendientes
+SELECT UsuarioTienePrestamosPendientes(201) AS TienePrestamosPendientes;

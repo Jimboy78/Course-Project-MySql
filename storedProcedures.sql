@@ -27,3 +27,6 @@ BEGIN
         SELECT 'Se ha registrado la devolución sin multa.' AS Mensaje;
     END IF;
 END;
+
+-- Ejemplo de cómo usar AlmacenarDevolucion para el préstamo con ID 301
+CALL AlmacenarDevolucion(301);
